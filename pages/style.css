@@ -3,61 +3,89 @@
   margin: 0;
   overflow-x: hidden;
 }
+
 html {
   padding-top: 277px;
   background-image: url(./images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .game {
-  width: 500px;
-  height: 200px;
+  width: 800px; /* Increased width */
+  height: 400px; /* Increased height */
   border: 1px solid black;
   margin: auto;
   background-color: #fff;
 }
+
 #character {
-  width: 20px;
-  height: 50px;
+  width: 40px; /* Increased width */
+  height: 100px; /* Increased height */
   background-color: red;
   position: relative;
-  top: 150px;
+  top: 300px; /* Adjusted position */
 }
+
 .animate {
   animation: jump 0.3s linear;
 }
+
 @keyframes jump {
   0% {
-    top: 150px;
+    top: 300px; /* Adjusted position */
   }
   30% {
-    top: 100px;
+    top: 200px; /* Adjusted position */
   }
   70% {
-    top: 100px;
+    top: 200px; /* Adjusted position */
   }
   100% {
-    top: 150px;
+    top: 300px; /* Adjusted position */
   }
 }
 
 #block {
   background-color: blue;
-  width: 20px;
-  height: 20px;
+  width: 40px; /* Increased width */
+  height: 40px; /* Increased height */
   position: relative;
-  top: 130px;
-  left: 500px;
+  top: 260px; /* Adjusted position */
+  left: 800px; /* Adjusted position */
   animation: block 1s infinite linear;
 }
+
 @keyframes block {
   0% {
-    left: 500px;
+    left: 800px; /* Adjusted position */
   }
   100% {
-    left: -20px;
+    left: -40px; /* Adjusted position */
   }
 }
+
 p {
   text-align: center;
+  position: absolute;
+  top: 220px; /* Adjusted position */
+  width: 100%; /* Ensure full width */
+  font-size: 40px; /* Increased font size */
+  color: black; /* Font color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow */
+}
+button {
+  position: absolute;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px; /* Increased padding */
+  font-size: 18px; /* Increased font size */
+  background-color: red; /* Red background color */
+  color: white; /* White text color */
+  cursor: pointer;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: darkgray;
 }
