@@ -10,6 +10,13 @@ function jump() {
     character.classList.remove("animate");
   }, 300);
 }
+
+document.addEventListener("keydown", function (event) {
+  if (event.code === "Space") {
+    jump();
+  }
+});
+
 var checkDead = setInterval(function () {
   let characterTop = parseInt(
     window.getComputedStyle(character).getPropertyValue("top")
