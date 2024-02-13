@@ -3,11 +3,18 @@
   margin: 0;
   overflow-x: hidden;
 }
+html {
+  padding-top: 277px;
+  background-image: url(./images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .game {
   width: 500px;
   height: 200px;
   border: 1px solid black;
   margin: auto;
+  background-color: #fff;
 }
 #character {
   width: 20px;
