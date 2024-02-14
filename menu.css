@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+body{
+	font-family: 'Press Start 2P', sans-serif;
+	text-align: center;
+	color: #eee;
+  	background-color: #222;
+}
+
+menu{
+	list-style: none;
+	padding: 0;
+}
+
+h1{
+	margin: 36px 24px;
+}
+
+li{
+	margin: 36px 24px;
+}
+
+a{
+	color: #eee;
+	font-size: 24px;
+}
+
+a:hover{
+	color:blue;
+}
