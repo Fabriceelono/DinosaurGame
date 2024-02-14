@@ -14,12 +14,14 @@ html {
 
 .game {
   position: relative;
-  width: 800px; /* Increased width */
-  height: 400px; /* Increased height */
+  width: 800px;
+  height: 400px;
   border: 1px solid black;
   margin: auto;
   overflow: hidden;
-  /* background-color: #fff; */
+  background-image: url(./images/mario-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #backgroundVideo {
   position: absolute;
@@ -168,4 +170,20 @@ button {
 }
 button:hover {
   background-color: darkgray;
+}
+article {
+  position: absolute;
+  top: 273px;
+  left: 23px;
+}
+article h3,
+h5 {
+  color: #996611;
+}
+h3 {
+  font-size: 25px;
+  text-decoration: underline;
+}
+h5 {
+  font-size: 15px;
 }
