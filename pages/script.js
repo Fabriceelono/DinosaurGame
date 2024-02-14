@@ -31,6 +31,7 @@ var checkDead = setInterval(function () {
   );
   if (blockLeft < 30 && blockLeft > -50 && characterTop >= 260) {
     block.style.animation = "none";
+    audio.pause();
     alert("Game Over. score: " + Math.floor(counter / 100));
     counter = 0;
     block.style.animation = "block 1s infinite linear";
