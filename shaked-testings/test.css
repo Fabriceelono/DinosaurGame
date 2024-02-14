@@ -1,14 +1,25 @@
 #mario {
     position: absolute;
     top: 256px;
-    background-image: url(/images/mario/idle.png);
+    background-image: url("images/mario/idle.png");
     background-size: contain;
     background-repeat: no-repeat;
     width: 40px;
-    height: 90px;
+    height: 100px;
 
 }
-
+#pipe {
+    position: absolute;
+    top: 256px;
+    left:512px;
+    background-image: url("images/obstacles/plant-close.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 80px;
+    animation: pipe-cycle infinite 500ms;
+    -webkit-animation: pipe-cycle 500ms infinite;
+}
 .walk {
     animation: walk-cycle infinite 500ms;
     -webkit-animation: walk-cycle 500ms infinite;
@@ -16,46 +27,46 @@
 
 @keyframes walk-cycle {
     0% {
-        background-image: url(/images/mario/idle.png);
+        background-image: url(images/mario/idle.png);
     }
 
     30% {
-        background-image: url(/images/mario/step.png);
+        background-image: url(images/mario/step.png);
     }
 
     50% {
-        background-image: url(/images/mario/jump-start.png);
+        background-image: url(images/mario/jump-start.png);
     }
 
     80% {
-        background-image: url(/images/mario/step.png);
+        background-image: url(images/mario/step.png);
     }
 
     100% {
-        background-image: url(/images/mario/idle.png);
+        background-image: url(images/mario/idle.png);
     }
 
 }
 
 @-webkit-keyframes walk-cycle {
     0% {
-        background-image: url(/images/mario/idle.png);
+        background-image: url(images/mario/idle.png);
     }
 
     30% {
-        background-image: url(/images/mario/step.png);
+        background-image: url(images/mario/step.png);
     }
 
     50% {
-        background-image: url(/images/mario/jump-start.png);
+        background-image: url(images/mario/jump-start.png);
     }
 
     80% {
-        background-image: url(/images/mario/step.png);
+        background-image: url(images/mario/step.png);
     }
 
     100% {
-        background-image: url(/images/mario/idle.png);
+        background-image: url(images/mario/idle.png);
     }
 
 }
@@ -68,27 +79,36 @@
 @keyframes jump-cycle {
     0% {
         top: 256px;
-        background-image: url(/images/mario/jump-start.png);
+        background-image: url(images/mario/jump-start.png);
 
     }
 
 
     40% {
         top: 180px;
-        background-image: url(/images/mario/jump-in-air.png);
+        background-image: url(images/mario/jump-in-air.png);
 
 
     }
 
     60% {
         top: 180px;
-        background-image: url(/images/mario/jump-in-air.png);
+        background-image: url(images/mario/jump-in-air.png);
 
 
     }
+    65% {
+        background-image: url(images/mario/jump-end.png);
 
+        top: 180px;
+    }
+    95% {
+        background-image: url(images/mario/jump-end.png);
+
+        top: 240px;
+    }
     100% {
-        background-image: url(/images/mario/jump-end.png);
+        background-image: url(images/mario/jump-end.png);
 
         top: 256px;
     }
@@ -98,28 +118,74 @@
 @-webkit-keyframes jump-cycle {
     0% {
         top: 256px;
-        background-image: url(/images/mario/jump-start.png);
+        background-image: url(images/mario/jump-start.png);
 
     }
 
 
     40% {
         top: 180px;
-        background-image: url(/images/mario/jump-in-air.png);
+        background-image: url(images/mario/jump-in-air.png);
 
 
     }
 
     60% {
         top: 180px;
-        background-image: url(/images/mario/jump-in-air.png);
+        background-image: url(images/mario/jump-in-air.png);
 
 
     }
 
     100% {
-        background-image: url(/images/mario/jump-end.png);
+        background-image: url(images/mario/jump-end.png);
 
         top: 256px;
     }
+}
+
+@keyframes pipe-cycle {
+    0% {
+        background-image: url(images/obstacles/plant-close.png);
+    }
+
+    30% {
+        background-image: url(images/obstacles/plant-mid.png);
+    }
+
+    50% {
+        background-image: url(images/obstacles/plant-open.png);
+    }
+
+    80% {
+        background-image: url(images/obstacles/plant-mid.png);
+    }
+
+    100% {
+        background-image: url(images/obstacles/plant-close.png);
+    }
+
+}
+
+@-webkit-keyframes pipe-cycle {
+    0% {
+        background-image: url(images/obstacles/plant-close.png);
+    }
+
+    30% {
+        background-image: url(images/obstacles/plant-mid.png);
+    }
+
+    50% {
+        background-image: url(images/obstacles/plant-open.png);
+    }
+
+    80% {
+        background-image: url(images/obstacles/plant-mid.png);
+    }
+
+    100% {
+        background-image: url(images/obstacles/plant-close.png);
+    }
+
 }

@@ -1,8 +1,7 @@
 var mario = document.getElementById("mario");
 
 
-function Jump()
-{
+function Jump() {
     mario.classList.remove("walk");
     mario.classList.add("jump");
 }
@@ -13,7 +12,11 @@ document.onkeydown = function (eventKeyName) {
     if (eventKeyName.key == " ") // space pressed
     {
         Jump();
+        setTimeout(function () {
+            mario.classList.remove("jump");
+            mario.classList.add("walk");
 
+        }, 500);
     }
 
 };
