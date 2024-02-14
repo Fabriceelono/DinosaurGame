@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -36,33 +37,86 @@ html {
   /* background-image: url(./images/mario.png); */
   position: relative;
   top: 300px; /* Adjusted position */
+  left: 30px;
+}
+.walk {
+  animation: walk-cycle infinite 500ms;
+  -webkit-animation: walk-cycle 500ms infinite;
+}
+
+@keyframes walk-cycle {
+  0% {
+    background-image: url(../shaked-testings/images/mario/idle.png);
+  }
+
+  30% {
+    background-image: url(../shaked-testings/images/mario/step.png);
+  }
+
+  50% {
+    background-image: url(../shaked-testings/images/mario/jump-start.png);
+  }
+
+  80% {
+    background-image: url(../shaked-testings/images/mario/step.png);
+  }
+
+  100% {
+    background-image: url(../shaked-testings/images/mario/idle.png);
+  }
+}
+@-webkit-keyframes walk-cycle {
+  0% {
+    background-image: url(../shaked-testings/images/mario/idle.png);
+  }
+
+  30% {
+    background-image: url(../shaked-testings/images/mario/step.png);
+  }
+
+  50% {
+    background-image: url(../shaked-testings/images/mario/jump-start.png);
+  }
+
+  80% {
+    background-image: url(../shaked-testings/images/mario/step.png);
+  }
+
+  100% {
+    background-image: url(../shaked-testings/images/mario/idle.png);
+  }
 }
 
 .animate {
   animation: jump 0.3s linear;
+  -webkit-animation: jump 0.3s;
 }
 
 @keyframes jump {
   0% {
     top: 300px; /* Adjusted position */
+    background-image: url(../shaked-testings/images/mario/jump-start.png);
   }
   30% {
     top: 200px; /* Adjusted position */
+    background-image: url(../shaked-testings/images/mario/jump-in-air.png);
   }
   70% {
     top: 200px; /* Adjusted position */
+    background-image: url(../shaked-testings/images/mario/jump-in-air.png);
   }
   100% {
     top: 300px; /* Adjusted position */
+    background-image: url(../shaked-testings/images/mario/jump-end.png);
   }
 }
 
 #block {
-  background-color: green; /* Change the background color to green */
+  /* background-color: green;  */
   width: 40px;
   height: 80px; /* Adjust the height to make it taller */
   position: relative;
-  top: 260px;
+  top: 302px;
   left: 800px;
   animation: block 1s infinite linear;
   border-top-left-radius: 20px; /* Adjust the top-left corner radius */
@@ -92,10 +146,21 @@ html {
 
 @keyframes block {
   0% {
-    left: 800px; /* Adjusted position */
+    left: 800px;
+    background-image: url(../shaked-testings/images/obstacles/plant-close.png);
+  }
+  30% {
+    background-image: url(../shaked-testings/images/obstacles/plant-mid.png);
+  }
+  50% {
+    background-image: url(../shaked-testings/images/obstacles/plant-open.png);
+  }
+  80% {
+    background-image: url(../shaked-testings/images/obstacles/plant-mid.png);
   }
   100% {
-    left: -40px; /* Adjusted position */
+    left: -40px;
+    background-image: url(../shaked-testings/images/obstacles/plant-close.png);
   }
 }
 
@@ -106,6 +171,7 @@ p {
   width: 100%; /* Ensure full width */
   font-size: 40px; /* Increased font size */
   color: black; /* Font color */
+  font-family: "Press Start 2P", sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow */
 }
 button {
@@ -119,6 +185,7 @@ button {
   color: white; /* White text color */
   cursor: pointer;
   border-radius: 10px;
+  font-family: "Press Start 2P", sans-serif;
 }
 button:hover {
   background-color: darkgray;
