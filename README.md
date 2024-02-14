@@ -4,9 +4,9 @@ Welcome to Mario Adventure! This project is a recreation of the classic Chrome d
 This project is built using HTML, CSS, and JavaScript.
 ## Features
 ### Mario Gameplay:
-Control Mario as he runs through the desert landscape, jumping over cacti and other obstacles.
+Control Mario as he runs through the desert landscape, jumping over cacti obstacles.
 ###  Instructions : 
-Use the space bar to make Mario jump over obstacles.
+Use the <b>space bar <b> to make Mario jump over obstacles.
 ###  Endless Runner: 
 The game continues indefinitely, challenging you to achieve the highest score possible.
 ###  Tech Used 🖥️
