@@ -1,3 +1,5 @@
+
+
 document.getElementById('quit').addEventListener('click', function quit(){
 	alert('Why so scared?');
 	let test = confirm('Sure you wanna be a quitter?');
@@ -11,6 +13,10 @@ document.getElementById('quit').addEventListener('click', function quit(){
 	}
 })
 
+const audio = document.getElementById("audio");
+document.getElementById('music').addEventListener('click', function audioStart(){
+	audio.play();
+})
 
 
 

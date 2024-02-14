@@ -34,3 +34,15 @@ a{
 a:hover{
 	color:#ffffff;
 }
+
+#music{
+	color: #ffff00;
+	font-weight: bold;
+}
+li:last-child{
+	margin-top: 100px;
+}
+
+li:last-child > #music:hover{
+	color: #996611;
+}
