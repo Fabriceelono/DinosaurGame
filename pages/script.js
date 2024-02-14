@@ -1,3 +1,4 @@
+const audio = document.getElementById("audio");
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 var counter = 0;
@@ -5,6 +6,7 @@ var initialCharacterTop = 300; // Initial top position of the character
 var initialBlockLeft = 800; // Initial left position of the block
 
 function jump() {
+  audio.play();
   if (character.classList == "animate") {
     return;
   }
