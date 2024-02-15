@@ -42,7 +42,7 @@ function checkDeadLogic() {
     document.getElementById("score-container").style.display = "flex";
     document.getElementById("score-text").innerHTML = Math.floor(score / 100);
     clearInterval(checkDead);
-
+    gameStarted = false;
   } else {
     score++;
     document.getElementById("scoreSpan").innerHTML = Math.floor(score / 100);
