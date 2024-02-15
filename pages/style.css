@@ -48,44 +48,44 @@ html {
 
 @keyframes walk-cycle {
   0% {
-    background-image: url(../shaked-testings/images/mario/idle.png);
+    content:  url(./images/mario/idle.png);
   }
 
   30% {
-    background-image: url(../shaked-testings/images/mario/step.png);
+    content: url(./images/mario/step.png);
   }
 
   50% {
-    background-image: url(../shaked-testings/images/mario/jump-start.png);
+    content: url(./images/mario/jump-start.png);
   }
 
   80% {
-    background-image: url(../shaked-testings/images/mario/step.png);
+    content: url(./images/mario/step.png);
   }
 
   100% {
-    background-image: url(../shaked-testings/images/mario/idle.png);
+    content: url(./images/mario/idle.png);
   }
 }
 @-webkit-keyframes walk-cycle {
   0% {
-    background-image: url(../shaked-testings/images/mario/idle.png);
+    content: url(./images/mario/idle.png);
   }
 
   30% {
-    background-image: url(../shaked-testings/images/mario/step.png);
+    content: url(./images/mario/step.png);
   }
 
   50% {
-    background-image: url(../shaked-testings/images/mario/jump-start.png);
+    content: url(./images/mario/jump-start.png);
   }
 
   80% {
-    background-image: url(../shaked-testings/images/mario/step.png);
+    content: url(./images/mario/step.png);
   }
 
   100% {
-    background-image: url(../shaked-testings/images/mario/idle.png);
+    content: url(./images/mario/idle.png);
   }
 }
 
@@ -97,19 +97,19 @@ html {
 @keyframes jump {
   0% {
     top: 300px; /* Adjusted position */
-    background-image: url(../shaked-testings/images/mario/jump-start.png);
+    content: url(./images/mario/jump-start.png);
   }
   30% {
     top: 200px; /* Adjusted position */
-    background-image: url(../shaked-testings/images/mario/jump-in-air.png);
+    content: url(./images/mario/jump-in-air.png);
   }
   70% {
     top: 200px; /* Adjusted position */
-    background-image: url(../shaked-testings/images/mario/jump-in-air.png);
+    content: url(./images/mario/jump-in-air.png);
   }
   100% {
     top: 300px; /* Adjusted position */
-    background-image: url(../shaked-testings/images/mario/jump-end.png);
+    content:url(./images/mario/jump-end.png);
   }
 }
 
@@ -128,20 +128,20 @@ html {
 @keyframes block {
   0% {
     left: 800px;
-    background-image: url(../shaked-testings/images/obstacles/plant-close.png);
+    content: url(./images/obstacles/plant-close.png);
   }
   30% {
-    background-image: url(../shaked-testings/images/obstacles/plant-mid.png);
+    content: url(./images/obstacles/plant-mid.png);
   }
   50% {
-    background-image: url(../shaked-testings/images/obstacles/plant-open.png);
+    content: url(./images/obstacles/plant-open.png);
   }
   80% {
-    background-image: url(../shaked-testings/images/obstacles/plant-mid.png);
+    content: url(./images/obstacles/plant-mid.png);
   }
   100% {
     left: -40px;
-    background-image: url(../shaked-testings/images/obstacles/plant-close.png);
+    content: url(./images/obstacles/plant-close.png);
   }
 }
 
