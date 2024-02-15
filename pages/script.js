@@ -1,15 +1,21 @@
 const audio = document.getElementById("audio");
 var character = document.getElementById("character");
 var block = document.getElementById("block");
-var counter = 0;
+var score = 0;
 var initialCharacterTop = 300; // Initial top position of the character
 var initialBlockLeft = 800; // Initial left position of the block
 
+var gameStarted = false;
+
 function jump() {
-  audio.play();
   if (character.classList == "animate") {
     return;
   }
+  if (gameStarted == false) {
+    return;
+  }
+  audio.play();
+
   character.classList.add("animate");
   setTimeout(function () {
     character.classList.remove("animate");
@@ -22,7 +28,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-var checkDead = setInterval(function () {
+function checkDeadLogic() {
   let characterTop = parseInt(
     window.getComputedStyle(character).getPropertyValue("top")
   );
@@ -30,13 +36,41 @@ var checkDead = setInterval(function () {
     window.getComputedStyle(block).getPropertyValue("left")
   );
   if (blockLeft < 30 && blockLeft > -50 && characterTop >= 260) {
-    block.style.animation = "none";
+    block.classList.remove("obstacles-animate");
     audio.pause();
-    alert("Game Over. score: " + Math.floor(counter / 100));
-    counter = 0;
-    block.style.animation = "block 1s infinite linear";
+    //alert("Game Over. score: " + Math.floor(counter / 100));
+    document.getElementById("score-container").style.display = "flex";
+    document.getElementById("score-text").innerHTML = Math.floor(score / 100);
+    clearInterval(checkDead);
+
   } else {
-    counter++;
-    document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
+    score++;
+    document.getElementById("scoreSpan").innerHTML = Math.floor(score / 100);
   }
-}, 10);
+}
+var checkDead;
+
+function startCountdown() {
+  gameStarted = false;
+  score=0;
+  document.getElementById("score-container").style.display = "none";
+  document.getElementById("counter-container").style.display = "flex";
+  let seconds = 3;
+  const countdownElement = document.getElementById('counter-text');
+
+  const timer = setInterval(() => {
+    countdownElement.textContent = seconds;
+    seconds--;
+
+    if (seconds < 0) {
+      document.getElementById("counter-container").style.display = "none";
+      clearInterval(timer);
+      block.classList.add("obstacles-animate");
+      checkDead = setInterval(checkDeadLogic, 10);
+      gameStarted = true;
+    }
+  }, 1000);
+}
+
+startCountdown();
+
