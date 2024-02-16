@@ -2,8 +2,8 @@ const audio = document.getElementById("audio");
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 var score = 0;
-var initialCharacterTop = 300; // Initial top position of the character
-var initialBlockLeft = 800; // Initial left position of the block
+var initialCharacterTop = 300;
+var initialBlockLeft = 800;
 
 var gameStarted = false;
 
@@ -52,11 +52,11 @@ var checkDead;
 
 function startCountdown() {
   gameStarted = false;
-  score=0;
+  score = 0;
   document.getElementById("score-container").style.display = "none";
   document.getElementById("counter-container").style.display = "flex";
   let seconds = 3;
-  const countdownElement = document.getElementById('counter-text');
+  const countdownElement = document.getElementById("counter-text");
 
   const timer = setInterval(() => {
     countdownElement.textContent = seconds;
@@ -73,4 +73,3 @@ function startCountdown() {
 }
 
 startCountdown();
-

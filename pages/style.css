@@ -17,7 +17,8 @@ html {
   font-size: 40px;
   color: black;
   font-family: "Press Start 2P", sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  z-index: 999;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 999;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -27,7 +28,6 @@ html {
   align-items: center;
 
   h2 {
-
     font-size: 72px;
   }
 }
@@ -61,26 +61,11 @@ html {
   background-size: cover;
 }
 
-#backgroundVideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Ensure the video covers the entire game container */
-}
-
 #character {
   width: 40px;
-  /* Increased width */
   height: 100px;
-  /* Increased height */
-  /* background-color: red; */
-  /* background-image: url(./images/mario.png); */
   position: relative;
   top: 300px;
-  /* Adjusted position */
   left: 30px;
 }
 
@@ -141,46 +126,39 @@ html {
 @keyframes jump {
   0% {
     top: 300px;
-    /* Adjusted position */
     content: url(./images/mario/jump-start.png);
   }
 
   30% {
     top: 200px;
-    /* Adjusted position */
+
     content: url(./images/mario/jump-in-air.png);
   }
 
   70% {
     top: 200px;
-    /* Adjusted position */
     content: url(./images/mario/jump-in-air.png);
   }
 
   100% {
     top: 300px;
-    /* Adjusted position */
+
     content: url(./images/mario/jump-end.png);
   }
 }
 
 #block {
-  /* background-color: green;  */
   width: 40px;
   height: 80px;
-  /* Adjust the height to make it taller */
   position: relative;
   top: 302px;
   left: 800px;
   border-top-left-radius: 20px;
-  /* Adjust the top-left corner radius */
   border-top-right-radius: 20px;
-  /* Adjust the top-right corner radius */
 }
 
 .obstacles-animate {
   animation: block 1s infinite linear;
-
 }
 
 @keyframes block {
@@ -211,16 +189,11 @@ p {
   text-align: center;
   position: absolute;
   top: 220px;
-  /* Adjusted position */
   width: 100%;
-  /* Ensure full width */
   font-size: 40px;
-  /* Increased font size */
   color: black;
-  /* Font color */
   font-family: "Press Start 2P", sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  /* Text shadow */
 }
 
 button {
@@ -229,13 +202,9 @@ button {
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
-  /* Increased padding */
   font-size: 18px;
-  /* Increased font size */
   background-color: red;
-  /* Red background color */
   color: white;
-  /* White text color */
   cursor: pointer;
   border-radius: 10px;
   font-family: "Press Start 2P", sans-serif;
@@ -265,7 +234,7 @@ h5 {
   font-size: 12px;
 }
 
-.play-again-btn{
+.play-again-btn {
   position: sticky;
   height: 48px;
   width: 256px;
