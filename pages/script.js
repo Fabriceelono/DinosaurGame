@@ -51,12 +51,16 @@ function checkDeadLogic() {
 var checkDead;
 
 function startCountdown() {
+  const countdownElement = document.getElementById("counter-text");
+
+
+  let seconds = 3;
+  countdownElement.textContent = seconds;
+
   gameStarted = false;
   score = 0;
   document.getElementById("score-container").style.display = "none";
   document.getElementById("counter-container").style.display = "flex";
-  let seconds = 3;
-  const countdownElement = document.getElementById("counter-text");
 
   const timer = setInterval(() => {
     countdownElement.textContent = seconds;
