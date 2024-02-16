@@ -56,7 +56,7 @@ function startCountdown() {
 
   let seconds = 3;
   countdownElement.textContent = seconds;
-
+  seconds--
   gameStarted = false;
   score = 0;
   document.getElementById("score-container").style.display = "none";
