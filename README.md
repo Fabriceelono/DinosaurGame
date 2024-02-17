@@ -1,6 +1,6 @@
 # Mario Adventure! ⛰️
 ## Overview
-Welcome to <a href="https://fabriceelono.github.io/DinosaurGame/">Mario Adventure!</a> This project is a recreation of the classic Chrome dinosaur game with a twist - now featuring everyone's favorite plumber, Mario! Dive into the nostalgia of retro gaming as you help Mario navigate through obstacles running endlessly. 
+Welcome to <a href="https://fabriceelono.github.io/DinosaurGame/">Mario Adventure!</a> This project is a recreation of the classic Chrome dinosaur game with a twist, A Divaholic twist - now featuring everyone's favorite plumber, Mario! Dive into the nostalgia of retro gaming as you help Mario navigate through obstacles running endlessly. 
 This project is built using HTML, CSS, and JavaScript.
 ## Features
 ### Mario Gameplay:
