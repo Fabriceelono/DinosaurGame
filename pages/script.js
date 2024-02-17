@@ -56,17 +56,15 @@ function startCountdown() {
 
   let seconds = 3;
   countdownElement.textContent = seconds;
-  seconds--
   gameStarted = false;
   score = 0;
   document.getElementById("score-container").style.display = "none";
   document.getElementById("counter-container").style.display = "flex";
 
   const timer = setInterval(() => {
-    countdownElement.textContent = seconds;
-    seconds--;
+    countdownElement.textContent = --seconds;
 
-    if (seconds < 0) {
+    if (seconds < 1) {
       document.getElementById("counter-container").style.display = "none";
       clearInterval(timer);
       block.classList.add("obstacles-animate");
