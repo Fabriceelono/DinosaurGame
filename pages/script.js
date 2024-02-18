@@ -93,9 +93,7 @@ function loadImages() {
   gameObstacle = obstacles[Math.floor(Math.random() * obstacles.length)];
 }
 
-// function getRandomObstacleImage() {
-//   return obstacles[Math.floor(Math.random() * obstacles.length)];
-// }
+
 
 function resetGame() {
   context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
