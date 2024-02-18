@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" onclick="jump()">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Jump Game</title>
@@ -7,26 +7,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="game">
-      <div class="counter" id="counter-container">
-        <h2 id="counter-text">3</h2>
-      </div>
-      <div class="score" id="score-container">
-        <span>Game Over!</span>
-        <span>Your Score is</span>
-        <span id="score-text"></span>
-        <button class="play-again-btn" onclick="startCountdown()">
-          Play Again !
-        </button>
-      </div>
-      <img id="character" class="" src="./images/mario/idle.png" alt="Mario" />
-      <img id="block" src="./images/obstacles/plant-close.png" alt="" />
+    <div class="score" id="score-container">
+      <span>Your Score is: </span>
+      <span id="score-text"></span>
     </div>
-    <section>
-      <audio id="audio" src="./audio/theme.mp3"></audio>
-      <a href="../index.html"><button>Exit</button></a>
-    </section>
-    <p>Score: <span id="scoreSpan"></span></p>
+    <canvas id="canvas"></canvas>
     <article>
       <h3>Instructions</h3>
       <h5>Use the Space key to jump and avoid obstacles</h5>
