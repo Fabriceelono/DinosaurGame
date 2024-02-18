@@ -1,6 +1,7 @@
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 const highScore = document.getElementById("score-text");
+const audio = document.getElementById("audio");
 
 const CANVAS_HEIGHT = 300;
 const CANVAS_WIDTH = 1000;
@@ -101,6 +102,7 @@ function resetGame() {
 
 function endGame() {
   gameOver = true;
+  audio.pause();
   context.fillStyle = "rgba(0, 0, 0, 0.4)";
   context.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   context.fillStyle = "rgb(255,20,20)";
@@ -119,6 +121,7 @@ function startGame() {
   if (checkCollision()) {
     return endGame();
   }
+  audio.play();
   backgroundX -= gameSpeed * 2;
   obstacleX -= gameSpeed * 2;
   updateBackground();
