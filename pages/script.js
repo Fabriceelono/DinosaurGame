@@ -32,6 +32,7 @@ let player = {
   width: PLAYER_WIDTH,
   height: PLAYER_HEIGHT,
 };
+
 function loadImages() {
   canvasBackground = new Image();
   canvasBackground.src = "./images/mario-background.jpg";
@@ -84,6 +85,10 @@ function loadImages() {
   Obstacle1.src = "./images/obstacles/plant-open.png";
 
   gameObstacle = Obstacle1;
+
+  const Obstacle2 = new Image();
+  Obstacle2.src = "./images/obstacles/blue-plant.png";
+  gameObstacle = Obstacle2;
 }
 function resetGame() {
   context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
