@@ -2,6 +2,7 @@ const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 const highScore = document.getElementById("score-text");
 const audio = document.getElementById("audio");
+const obstacles = [];
 
 const CANVAS_HEIGHT = 300;
 const CANVAS_WIDTH = 1000;
@@ -84,13 +85,14 @@ function loadImages() {
 
   const Obstacle1 = new Image();
   Obstacle1.src = "./images/obstacles/plant-open.png";
-
-  gameObstacle = Obstacle1;
+  obstacles.push(Obstacle1);
 
   const Obstacle2 = new Image();
   Obstacle2.src = "./images/obstacles/blue-plant.png";
-  gameObstacle = Obstacle2;
+  obstacles.push(Obstacle2);
+  gameObstacle = obstacles[Math.floor(Math.random() * obstacles.length)];
 }
+
 function resetGame() {
   context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   gameScore = 0;
@@ -144,6 +146,7 @@ function updateScore() {
 function updateObstacle() {
   if (obstacleX < -10) {
     obstacleX = 1100;
+    gameObstacle = obstacles[Math.floor(Math.random() * obstacles.length)];
   }
   context.drawImage(
     gameObstacle,
