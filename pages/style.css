@@ -19,3 +19,11 @@ body {
   font-family: sans-serif;
   padding-bottom: 5px;
 }
+
+article{
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  padding: 36px 24px;
+  color: #ffff00;
+  font-size: 18px;
+}
