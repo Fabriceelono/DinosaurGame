@@ -90,6 +90,11 @@ function loadImages() {
   const Obstacle2 = new Image();
   Obstacle2.src = "./images/obstacles/blue-plant.png";
   obstacles.push(Obstacle2);
+
+  const Obstacle3 = new Image();
+  Obstacle3.src = "./images/obstacles/goomba-edit.png";
+  obstacles.push(Obstacle3);
+
   gameObstacle = obstacles[Math.floor(Math.random() * obstacles.length)];
 }
 
