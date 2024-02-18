@@ -1,36 +1,37 @@
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 const highScore = document.getElementById("score-text");
-let walkingSpeed = 40;
+
 const CANVAS_HEIGHT = 300;
 const CANVAS_WIDTH = 1000;
 const PLAYER_HEIGHT = 100;
 const PLAYER_WIDTH = 50;
 const GAME_SPEED = 1.5;
 const OBSTACLE_HEIGHT = 50;
-const OBSTACLE_WIDTH = 50;
-let OBSTACLE_X = 900;
-let gameScore = 0;
-let PlayerImage;
-let canvasBackground;
+const OBSTACLE_WIDTH = 30;
+
 const playerStepImages = [];
 const playerJumpingImages = [];
-let playerIdle;
+
+let PlayerImage, gameObstacle, canvasBackground, playerIdle, gameSpeed;
+let backgroundX = 0;
+let obstacleX = 900;
+let walkingSpeed = 40;
+let gameScore = 0;
 let gameOver = false;
-let BACKGROUND_X = 0;
 let gameStarted = false;
 let jumping = false;
 let falling = false;
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
-let gameSpeed = GAME_SPEED;
+gameSpeed = GAME_SPEED;
+
 let player = {
   x: 20,
   y: 160,
   width: PLAYER_WIDTH,
   height: PLAYER_HEIGHT,
 };
-let gameObstacle;
 function loadImages() {
   canvasBackground = new Image();
   canvasBackground.src = "./images/mario-background.jpg";
@@ -47,20 +48,20 @@ function loadImages() {
   canvasBackground.onload = () => {
     context.drawImage(
       canvasBackground,
-      BACKGROUND_X,
+      backgroundX,
       0,
       CANVAS_WIDTH,
       CANVAS_HEIGHT
     );
     context.drawImage(
       canvasBackground,
-      BACKGROUND_X + CANVAS_WIDTH,
+      backgroundX + CANVAS_WIDTH,
       0,
       CANVAS_WIDTH,
       CANVAS_HEIGHT
     );
-    if (BACKGROUND_X < -CANVAS_WIDTH) {
-      BACKGROUND_X = 0;
+    if (backgroundX < -CANVAS_WIDTH) {
+      backgroundX = 0;
     }
   };
   const PlayerStep1 = new Image();
@@ -91,27 +92,35 @@ function resetGame() {
   falling = false;
   gameStarted = false;
   gameSpeed = GAME_SPEED;
-  OBSTACLE_X = 900;
+  obstacleX = 900;
   player = { ...player, x: 20, y: 160 };
   gameOver = false;
-  BACKGROUND_X = 0;
-
+  backgroundX = 0;
   loadImages();
+}
+
+function endGame() {
+  gameOver = true;
+  context.fillStyle = "rgba(0, 0, 0, 0.4)";
+  context.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  context.fillStyle = "rgb(255,20,20)";
+  context.font = "bold 60px serif";
+  context.strokeStyle = "black";
+  context.fillText("GAME OVER", 300, 150);
+  context.strokeText("GAME OVER", 300, 150);
+
+  context.fillStyle = "#fff";
+  context.font = "bold 40px serif";
+  context.fillText(`Click or Press Space to play again`, 225, 200);
 }
 
 function startGame() {
   if (!gameStarted || gameOver) return;
-  console.log(checkCollision());
   if (checkCollision()) {
-    gameOver = true;
-    context.fillStyle = "rgba(0, 0, 0, 0.4)";
-    context.font = "30px serif";
-    context.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    context.fillText(`Click or Press Space to play again`, 300, 150);
-    return;
+    return endGame();
   }
-  BACKGROUND_X -= gameSpeed * 2;
-  OBSTACLE_X -= gameSpeed * 2;
+  backgroundX -= gameSpeed * 2;
+  obstacleX -= gameSpeed * 2;
   updateBackground();
   playerWalkAndJump();
   updateObstacle();
@@ -123,39 +132,14 @@ function startGame() {
 function updateScore() {
   return Math.floor(gameScore).toString().padStart(6, 0);
 }
-window.addEventListener("keydown", handleJump);
-function handleJump(e) {
-  if ((e.code == "Space" || e.code == "ArrowUp") && player.y == 160) {
-    if (!gameStarted) {
-      gameStarted = true;
-      startGame();
-      return;
-    }
-    jumping = true;
-  }
-}
-window.addEventListener("click", () => {
-  if (gameOver) {
-    resetGame();
-    gameStarted = true;
-    startGame();
-    return;
-  }
-  if (!gameStarted) {
-    gameStarted = true;
-    startGame();
-    return;
-  }
-  jumping = true;
-});
 
 function updateObstacle() {
-  if (OBSTACLE_X < -10) {
-    OBSTACLE_X = 1100;
+  if (obstacleX < -10) {
+    obstacleX = 1100;
   }
   context.drawImage(
     gameObstacle,
-    OBSTACLE_X,
+    obstacleX,
     205,
     OBSTACLE_WIDTH,
     OBSTACLE_HEIGHT
@@ -199,30 +183,52 @@ function playerWalkAndJump() {
 }
 function checkCollision() {
   return (
-    player.x + player.width >= OBSTACLE_X &&
-    player.x <= OBSTACLE_X + OBSTACLE_WIDTH &&
-    player.y + player.height >= 205 &&
-    player.y <= 205 + OBSTACLE_HEIGHT
+    player.x + player.width >= obstacleX + 10 &&
+    player.x <= obstacleX + OBSTACLE_WIDTH - 20 &&
+    player.y + player.height >= 210 &&
+    player.y <= 205 + OBSTACLE_HEIGHT + 10
   );
 }
 function updateBackground() {
   context.drawImage(
     canvasBackground,
-    BACKGROUND_X,
+    backgroundX,
     0,
     CANVAS_WIDTH,
     CANVAS_HEIGHT
   );
   context.drawImage(
     canvasBackground,
-    BACKGROUND_X + CANVAS_WIDTH,
+    backgroundX + CANVAS_WIDTH,
     0,
     CANVAS_WIDTH,
     CANVAS_HEIGHT
   );
-  if (BACKGROUND_X < -CANVAS_WIDTH) {
-    BACKGROUND_X = 0;
+  if (backgroundX < -CANVAS_WIDTH) {
+    backgroundX = 0;
   }
 }
 loadImages();
 requestAnimationFrame(startGame);
+
+function handleJump() {
+  if (gameOver) {
+    resetGame();
+    gameStarted = true;
+    startGame();
+    return;
+  }
+  if (!gameStarted) {
+    gameStarted = true;
+    startGame();
+    return;
+  }
+  jumping = true;
+}
+
+window.addEventListener("click", handleJump);
+window.addEventListener("keydown", (e) => {
+  if (e.code == "Space" || e.code == "ArrowUp") {
+    handleJump();
+  }
+});
