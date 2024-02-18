@@ -130,7 +130,7 @@ function startGame() {
   gameScore += 0.1;
 }
 function updateScore() {
-  return Math.floor(gameScore).toString().padStart(6, 0);
+  return Math.floor(gameScore).toString();
 }
 
 function updateObstacle() {
