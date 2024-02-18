@@ -93,6 +93,10 @@ function loadImages() {
   gameObstacle = obstacles[Math.floor(Math.random() * obstacles.length)];
 }
 
+// function getRandomObstacleImage() {
+//   return obstacles[Math.floor(Math.random() * obstacles.length)];
+// }
+
 function resetGame() {
   context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   gameScore = 0;
@@ -146,7 +150,7 @@ function updateScore() {
 function updateObstacle() {
   if (obstacleX < -10) {
     obstacleX = 1100;
-    gameObstacle = obstacles[Math.floor(Math.random() * obstacles.length)];
+  gameObstacle = obstacles[Math.floor(Math.random() * obstacles.length)];
   }
   context.drawImage(
     gameObstacle,
